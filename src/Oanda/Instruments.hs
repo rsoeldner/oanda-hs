@@ -5,15 +5,15 @@
 
 module Oanda.Instruments where
 
-import qualified Data.Aeson.TH as A
 import qualified Data.Text as T
 import Data.Aeson
 
 --import Oanda.Accounts
 import Oanda.Internal
+import Servant.API
 
 newtype InstrumentName = InstrumentName T.Text
-  deriving (Show, ToJSON, FromJSON)
+  deriving (Show, ToJSON, FromJSON, ToHttpApiData)
 
 data Instrument
   = Instrument

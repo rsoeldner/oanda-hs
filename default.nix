@@ -1,5 +1,5 @@
 { mkDerivation, aeson, base, bytestring, http-client-tls, mtl
-, servant, servant-client, servant-client-core, stdenv, text
+, servant, servant-client, servant-client-core, stdenv, text, time
 }:
 mkDerivation {
   pname = "oanda";
@@ -7,7 +7,7 @@ mkDerivation {
   src = ./.;
   libraryHaskellDepends = [
     aeson base bytestring http-client-tls mtl servant servant-client
-    servant-client-core text
+    servant-client-core text time
   ];
   license = stdenv.lib.licenses.bsd3;
 }

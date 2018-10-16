@@ -21,7 +21,9 @@ options prefix
   { A.fieldLabelModifier = normalize . drop (T.length prefix)
   , A.sumEncoding        = A.ObjectWithSingleField
   }
-  where normalize (x:xs) = C.toLower x : xs
+  where 
+    normalize (x:xs) = C.toLower x : xs
+    normalize []     = fail "Empty name"
 
 
 textRead :: (Read a) => Value -> Parser a
